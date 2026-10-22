@@ -13,13 +13,13 @@ from safetensors.torch import save_file
 from vllm.lora.layers.column_parallel_linear import MergedColumnParallelLinearWithLoRA
 from vllm.lora.layers.row_parallel_linear import RowParallelLinearWithLoRA
 from vllm.lora.lora_weights import PackedLoRALayerWeights
-from vllm_omni.diffusion.lora.manager import DiffusionLoRAManager
-from vllm_omni.inputs.data import OmniDiffusionSamplingParams
-from vllm_omni.lora.request import LoRARequest
 
+from vllm_omni.diffusion.lora.manager import DiffusionLoRAManager
 from vllm_omni.diffusion.models.minimax_h3 import MiniMaxH3Pipeline
 from vllm_omni.diffusion.models.minimax_h3 import larry_lora as larry
 from vllm_omni.errors import OmniClientError
+from vllm_omni.inputs.data import OmniDiffusionSamplingParams
+from vllm_omni.lora.request import LoRARequest
 
 pytestmark = [pytest.mark.core_model, pytest.mark.diffusion, pytest.mark.cpu]
 
