@@ -296,7 +296,7 @@ MiniMax-H3 supports the following few-step mechanisms:
   sampler). Start with 6 or 8 updates and `lora_scale=1.0`. The original H3
   checkpoint must not pin a distilled `base_schedule`. Ref2VA requests require
   a dedicated `--task-type ref2va` server; a combined server would bind the
-  FL2VA transformer instead. See the [Larry recipe](../../../recipes/MiniMaxAI/MiniMax-H3.md#larry-v4-lora).
+  FL2VA transformer instead. See the [Larry recipe](https://github.com/vllm-project/vllm-omni/blob/main/recipes/MiniMaxAI/MiniMax-H3.md#larry-v4-lora).
 
 Native artifacts also declare `qkv_layout=grouped`. The H3 loader reorders fused
 `qkv_proj` LoRA rows with the same `_reorder_grouped_qkv_to_qkv` helper used for
@@ -310,7 +310,7 @@ layer's rank and uses `alpha/rank=1`, including AdaLN projections. All 259
 targets must load and bind; missing or unexpected tensors are rejected. Its
 ordinary H3 sigma ladder is derived from the requested update count rather than
 the FlashGen fixed schedule. CPU tests exercise format and factor semantics.
-The [recipe](../../../recipes/MiniMaxAI/MiniMax-H3.md#larry-v4-lora) records a
+The [recipe](https://github.com/vllm-project/vllm-omni/blob/main/recipes/MiniMaxAI/MiniMax-H3.md#larry-v4-lora) records a
 contributor-run A800 T2VA functional check.
 
 LightX2V and FlashGen runtime adapters run with distributed layerwise offload in request-mode
